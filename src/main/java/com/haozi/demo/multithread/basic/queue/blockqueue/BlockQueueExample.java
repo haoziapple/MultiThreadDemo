@@ -10,30 +10,24 @@ import java.util.List;
  * @date:2016年9月30日 上午9:30:09
  * @author:WangHao
  */
-public class BlockQueueExample
-{
-	private List list = new ArrayList();
+public class BlockQueueExample {
+    private List list = new ArrayList();
 
-	public synchronized Object pop() throws InterruptedException
-	{
-		while (list.size() == 0)
-		{
-			this.wait();
-		}
+    public synchronized Object pop() throws InterruptedException {
+        while (list.size() == 0) {
+            this.wait();
+        }
 
-		if (list.size() > 0)
-		{
-			return list.remove(0);
-		} else
-		{
-			return null;
-		}
-	}
+        if (list.size() > 0) {
+            return list.remove(0);
+        } else {
+            return null;
+        }
+    }
 
-	@SuppressWarnings("unchecked")
-	public synchronized void put(Object obj)
-	{
-		list.add(obj);
-		this.notify();
-	}
+    @SuppressWarnings("unchecked")
+    public synchronized void put(Object obj) {
+        list.add(obj);
+        this.notify();
+    }
 }

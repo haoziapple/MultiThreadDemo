@@ -7,18 +7,15 @@ package com.haozi.demo.multithread.basic.thread;
  * @date:2016年9月29日 下午1:15:29
  * @author:WangHao
  */
-public class MyThread extends Thread
-{
-	private static int num = 0;
+public class MyThread extends Thread {
+    private static int num = 0;
 
-	public MyThread()
-	{
-		num++;
-	}
+    public MyThread() {
+        num++;
+    }
 
-	@Override
-	public void run()
-	{
-		System.out.println("主动创建的第" + num + "个线程");
-	}
+    @Override
+    public void run() {
+        System.out.println("主动创建的第" + num + "个线程");
+    }
 }
