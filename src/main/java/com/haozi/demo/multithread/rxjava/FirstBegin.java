@@ -29,6 +29,9 @@ public class FirstBegin {
 
     Observable<Long> senderInterval = Observable.interval(1, TimeUnit.SECONDS);
 
+    /**
+     * 2秒后发射一个0L
+     */
     Observable<Long> senderTimer = Observable.timer(2, TimeUnit.SECONDS);
 
     Observer<Object> receiver = new Observer<Object>() {
@@ -58,7 +61,9 @@ public class FirstBegin {
         begin.senderJust.subscribe(begin.receiver);
         begin.senderFrom.subscribe(begin.receiver);
 
-        begin.senderTimer.subscribe(begin.receiver);
         begin.senderInterval.subscribe(begin.receiver);
+        begin.senderTimer.subscribe(begin.receiver);
+
+        begin.senderFrom.subscribe(begin.receiver);
     }
 }
