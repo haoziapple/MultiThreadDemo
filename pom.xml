@@ -15,7 +15,12 @@
     </properties>
 
     <dependencies>
-
+        <!--尝试rxjava，计划学习rxjava2的时候另起一个工程-->
+        <dependency>
+            <groupId>io.reactivex</groupId>
+            <artifactId>rxjava</artifactId>
+            <version>1.1.10</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
